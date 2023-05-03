@@ -1,15 +1,27 @@
-$primcolor: rgb(121, 16, 212);
-$section-color: rgba(40, 21, 2, 0.877);
-$global-font: Helvetica;
-$section-items-border: 1px solid rgb(143, 251, 161);
 
-$title-color: #cfab09e3;
-$title-font: sans-serif;
-$input-color: #a16ed3bd;
 $color-border-1: #138df0e9;
 $color-border-2: #75b7ec;
 $color-border-3: #125b97;
-$color-text-1: #d29999;
-$color-text-2: #d1af90;
-$color-text-3: #d2c98c;
-$icon-search: ".\icons\searchicon.png"
+$size-1: 4px;
+$size-2: 8px;
+
+$icon-search: url("icons/searchicon.png");
+
+$text-colors: (
+    "title": #202634,
+    "section": #d1af90,
+    "input": #d2c98c,
+);
+$bg-colors: (
+    "title": #fd52b3e6,
+    "section": #a4f2fe,
+    "input": #f9dd53,
+    "focused" : rgba(255, 55, 0, 0.441),
+);
+
+$border-colors: (
+    "title": #39284a,
+    "section": #17a2b8,
+    "input": #ffc107,
+);
+

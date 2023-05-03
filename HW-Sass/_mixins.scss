@@ -1,0 +1,59 @@
+@use "sass:map";
+@import "variables";
+
+@mixin text($class){
+    color: map-get($map: $text-colors, $key: $class );
+    @if $class=="section"{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: medium;
+    }
+
+    @if $class=="title"{
+        font-weight: 500;
+        font-size: large;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+        text-shadow: 1%;
+        text-align: center;
+    }
+
+    @if $class=="input"{
+        font-weight: 200;
+        font-size: small;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Verdana, sans-serif;
+    }
+
+}
+
+@mixin bordered($class){
+    border-color: map-get($border-colors,$class);
+
+    @if $class=="section"{
+        
+        border: 2px solid;
+        border-radius: 2px;
+
+    }@else {
+        @if $class == "title"{
+
+            border-top: 1px;
+            border-style: double;
+            border-radius: 4px;
+        
+
+        }@else{
+            @if $class=="input"{
+
+                border: 1px dashed;
+                border-radius: 8px;
+            
+            }
+        }
+    }
+
+    
+}
+
+@mixin focused(){
+    border : solid rgba(205, 18, 18, 0.637);
+    background-color: map-get($map: $bg-colors, $key: "focused" );
+}

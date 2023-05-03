@@ -1,5 +1,6 @@
-@import "./variables";
-
+@use "sass:map";
+@import "variables";
+@import "mixins";
 *{
     padding: 0;
     margin: 0;
@@ -14,7 +15,8 @@ body{
     align-items: center;
 }
 .section{
-    font-family:$global-font;
+    @include bordered("section");
+    @include text("section");
     height: 30%;
     width: 70%;
     display: flex;
@@ -22,41 +24,36 @@ body{
     row-gap: 25px;
     justify-content: space-around;
     align-items: center;
-    background-color: $section-color;
-
-    .title{
+    //bg
+    background-color: map-get($map: $bg-colors, $key: "section" );
+    
+    title{
+        @include bordered("title");
+        @include text("title");
+        padding: $size-1 ;
+        display: flex;
+        justify-content: center;
+        height: fit-content;
+        width: fit-content;
+        background-color: map-get($map: $bg-colors, $key:"title" );
         
-        height: 30%;
-        width: 80%;
-        font-family: $title-font;
-        text-align: center;
-        background-color: $title-color;
-        color: $color-text-2;
-        border: $section-items-border;
-    }
-
+    }    
     .input{
-
+        @include bordered("input");
+        @include text("input");
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         height: 45%;
         width: 60%;
-        text-align: center;
-        font-family: $global-font;
-        
-        background-image: url($icon-search);
-        background-position: 10px 10px;
-        background-repeat: no-repeat;
-        label{
-            text-align: start;
-            color: $color-text-1;
-        }
+        background-color: map-get($map: $bg-colors, $key:"input" );
         :focus{
             width: 80%;
-            background-color: $input-color;
-            border: 4px solid $color-border-3;
+            @include focused();
         }
     }
+    
+    
 }
+
